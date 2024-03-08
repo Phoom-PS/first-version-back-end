@@ -1,15 +1,17 @@
-from flask import Flask, render_template,jsonify,request
+from flask import Flask, jsonify, request
 from flask_cors import CORS,cross_origin
 
 app = Flask(__name__)
-cors=CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
 
-books=[
-    {"id":1,"title":"Book 1","author":"Author 1"},
-    {"id":2,"title":"Book 2","author":"Author 2"},
-    {"id":3,"title":"Book 3","author":"Author 3"}
-]
+
+CORS(app)
+
+books = [{"id":1,"title":"Book1", "author":"me"},
+         {"id":2,"title":"Book2", "author":"me"},
+         {"id":3,"title":"Book3", "author":"me"}
+         ]
+
+
 
 @app.route("/")
 def Greet():
